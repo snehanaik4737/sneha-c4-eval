@@ -54,7 +54,7 @@ router.patch("/:id",authenticate,async(req,res)=>{
         
     }
 })
-router.delete("",authenticate,async(req,res)=>{
+router.delete("/:id",authenticate,async(req,res)=>{
     try {
      const todos = await Todo.findByIdAndDelete(req.params.id);
 
