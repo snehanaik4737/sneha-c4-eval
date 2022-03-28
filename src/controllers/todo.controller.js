@@ -20,6 +20,7 @@ router.get("",authenticate,async(req,res)=>{
 })
 
 router.post("",authenticate,async(req,res)=>{
+    req.body.user_id = req.user._id; 
     try {
      const todos = await Todo.create(req.body);
 
